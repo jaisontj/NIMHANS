@@ -1,0 +1,523 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DA741F9B1BC3F0480000E9D8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA741F9A1BC3F0480000E9D8 /* AppDelegate.swift */; };
+		DA741F9D1BC3F0480000E9D8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA741F9C1BC3F0480000E9D8 /* ViewController.swift */; };
+		DA741FA01BC3F0480000E9D8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA741F9E1BC3F0480000E9D8 /* Main.storyboard */; };
+		DA741FA31BC3F0480000E9D8 /* NIMHANS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DA741FA11BC3F0480000E9D8 /* NIMHANS.xcdatamodeld */; };
+		DA741FA51BC3F0480000E9D8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA741FA41BC3F0480000E9D8 /* Assets.xcassets */; };
+		DA741FA81BC3F0480000E9D8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA741FA61BC3F0480000E9D8 /* LaunchScreen.storyboard */; };
+		DA741FB31BC3F0480000E9D8 /* NIMHANSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA741FB21BC3F0480000E9D8 /* NIMHANSTests.swift */; };
+		DA741FBE1BC3F0480000E9D8 /* NIMHANSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA741FBD1BC3F0480000E9D8 /* NIMHANSUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DA741FAF1BC3F0480000E9D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DA741F8F1BC3F0480000E9D8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DA741F961BC3F0480000E9D8;
+			remoteInfo = NIMHANS;
+		};
+		DA741FBA1BC3F0480000E9D8 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DA741F8F1BC3F0480000E9D8 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DA741F961BC3F0480000E9D8;
+			remoteInfo = NIMHANS;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DA741F971BC3F0480000E9D8 /* NIMHANS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NIMHANS.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA741F9A1BC3F0480000E9D8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DA741F9C1BC3F0480000E9D8 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DA741F9F1BC3F0480000E9D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DA741FA21BC3F0480000E9D8 /* NIMHANS.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NIMHANS.xcdatamodel; sourceTree = "<group>"; };
+		DA741FA41BC3F0480000E9D8 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DA741FA71BC3F0480000E9D8 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DA741FA91BC3F0480000E9D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA741FAE1BC3F0480000E9D8 /* NIMHANSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NIMHANSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA741FB21BC3F0480000E9D8 /* NIMHANSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NIMHANSTests.swift; sourceTree = "<group>"; };
+		DA741FB41BC3F0480000E9D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA741FB91BC3F0480000E9D8 /* NIMHANSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NIMHANSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA741FBD1BC3F0480000E9D8 /* NIMHANSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NIMHANSUITests.swift; sourceTree = "<group>"; };
+		DA741FBF1BC3F0480000E9D8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DA741F941BC3F0480000E9D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA741FAB1BC3F0480000E9D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA741FB61BC3F0480000E9D8 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DA741F8E1BC3F0480000E9D8 = {
+			isa = PBXGroup;
+			children = (
+				DA741F991BC3F0480000E9D8 /* NIMHANS */,
+				DA741FB11BC3F0480000E9D8 /* NIMHANSTests */,
+				DA741FBC1BC3F0480000E9D8 /* NIMHANSUITests */,
+				DA741F981BC3F0480000E9D8 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DA741F981BC3F0480000E9D8 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DA741F971BC3F0480000E9D8 /* NIMHANS.app */,
+				DA741FAE1BC3F0480000E9D8 /* NIMHANSTests.xctest */,
+				DA741FB91BC3F0480000E9D8 /* NIMHANSUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DA741F991BC3F0480000E9D8 /* NIMHANS */ = {
+			isa = PBXGroup;
+			children = (
+				DA741F9A1BC3F0480000E9D8 /* AppDelegate.swift */,
+				DA741F9C1BC3F0480000E9D8 /* ViewController.swift */,
+				DA741F9E1BC3F0480000E9D8 /* Main.storyboard */,
+				DA741FA41BC3F0480000E9D8 /* Assets.xcassets */,
+				DA741FA61BC3F0480000E9D8 /* LaunchScreen.storyboard */,
+				DA741FA91BC3F0480000E9D8 /* Info.plist */,
+				DA741FA11BC3F0480000E9D8 /* NIMHANS.xcdatamodeld */,
+			);
+			path = NIMHANS;
+			sourceTree = "<group>";
+		};
+		DA741FB11BC3F0480000E9D8 /* NIMHANSTests */ = {
+			isa = PBXGroup;
+			children = (
+				DA741FB21BC3F0480000E9D8 /* NIMHANSTests.swift */,
+				DA741FB41BC3F0480000E9D8 /* Info.plist */,
+			);
+			path = NIMHANSTests;
+			sourceTree = "<group>";
+		};
+		DA741FBC1BC3F0480000E9D8 /* NIMHANSUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DA741FBD1BC3F0480000E9D8 /* NIMHANSUITests.swift */,
+				DA741FBF1BC3F0480000E9D8 /* Info.plist */,
+			);
+			path = NIMHANSUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DA741F961BC3F0480000E9D8 /* NIMHANS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA741FC21BC3F0480000E9D8 /* Build configuration list for PBXNativeTarget "NIMHANS" */;
+			buildPhases = (
+				DA741F931BC3F0480000E9D8 /* Sources */,
+				DA741F941BC3F0480000E9D8 /* Frameworks */,
+				DA741F951BC3F0480000E9D8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NIMHANS;
+			productName = NIMHANS;
+			productReference = DA741F971BC3F0480000E9D8 /* NIMHANS.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DA741FAD1BC3F0480000E9D8 /* NIMHANSTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA741FC51BC3F0480000E9D8 /* Build configuration list for PBXNativeTarget "NIMHANSTests" */;
+			buildPhases = (
+				DA741FAA1BC3F0480000E9D8 /* Sources */,
+				DA741FAB1BC3F0480000E9D8 /* Frameworks */,
+				DA741FAC1BC3F0480000E9D8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DA741FB01BC3F0480000E9D8 /* PBXTargetDependency */,
+			);
+			name = NIMHANSTests;
+			productName = NIMHANSTests;
+			productReference = DA741FAE1BC3F0480000E9D8 /* NIMHANSTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DA741FB81BC3F0480000E9D8 /* NIMHANSUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA741FC81BC3F0480000E9D8 /* Build configuration list for PBXNativeTarget "NIMHANSUITests" */;
+			buildPhases = (
+				DA741FB51BC3F0480000E9D8 /* Sources */,
+				DA741FB61BC3F0480000E9D8 /* Frameworks */,
+				DA741FB71BC3F0480000E9D8 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DA741FBB1BC3F0480000E9D8 /* PBXTargetDependency */,
+			);
+			name = NIMHANSUITests;
+			productName = NIMHANSUITests;
+			productReference = DA741FB91BC3F0480000E9D8 /* NIMHANSUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DA741F8F1BC3F0480000E9D8 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = foofys;
+				TargetAttributes = {
+					DA741F961BC3F0480000E9D8 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					DA741FAD1BC3F0480000E9D8 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = DA741F961BC3F0480000E9D8;
+					};
+					DA741FB81BC3F0480000E9D8 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = DA741F961BC3F0480000E9D8;
+					};
+				};
+			};
+			buildConfigurationList = DA741F921BC3F0480000E9D8 /* Build configuration list for PBXProject "NIMHANS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DA741F8E1BC3F0480000E9D8;
+			productRefGroup = DA741F981BC3F0480000E9D8 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DA741F961BC3F0480000E9D8 /* NIMHANS */,
+				DA741FAD1BC3F0480000E9D8 /* NIMHANSTests */,
+				DA741FB81BC3F0480000E9D8 /* NIMHANSUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DA741F951BC3F0480000E9D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA741FA81BC3F0480000E9D8 /* LaunchScreen.storyboard in Resources */,
+				DA741FA51BC3F0480000E9D8 /* Assets.xcassets in Resources */,
+				DA741FA01BC3F0480000E9D8 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA741FAC1BC3F0480000E9D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA741FB71BC3F0480000E9D8 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DA741F931BC3F0480000E9D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA741FA31BC3F0480000E9D8 /* NIMHANS.xcdatamodeld in Sources */,
+				DA741F9D1BC3F0480000E9D8 /* ViewController.swift in Sources */,
+				DA741F9B1BC3F0480000E9D8 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA741FAA1BC3F0480000E9D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA741FB31BC3F0480000E9D8 /* NIMHANSTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA741FB51BC3F0480000E9D8 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA741FBE1BC3F0480000E9D8 /* NIMHANSUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DA741FB01BC3F0480000E9D8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DA741F961BC3F0480000E9D8 /* NIMHANS */;
+			targetProxy = DA741FAF1BC3F0480000E9D8 /* PBXContainerItemProxy */;
+		};
+		DA741FBB1BC3F0480000E9D8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DA741F961BC3F0480000E9D8 /* NIMHANS */;
+			targetProxy = DA741FBA1BC3F0480000E9D8 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DA741F9E1BC3F0480000E9D8 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA741F9F1BC3F0480000E9D8 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DA741FA61BC3F0480000E9D8 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA741FA71BC3F0480000E9D8 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DA741FC01BC3F0480000E9D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		DA741FC11BC3F0480000E9D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DA741FC31BC3F0480000E9D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = NIMHANS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.foofys.NIMHANS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		DA741FC41BC3F0480000E9D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = NIMHANS/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.foofys.NIMHANS;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		DA741FC61BC3F0480000E9D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = NIMHANSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.foofys.NIMHANSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NIMHANS.app/NIMHANS";
+			};
+			name = Debug;
+		};
+		DA741FC71BC3F0480000E9D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = NIMHANSTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.foofys.NIMHANSTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NIMHANS.app/NIMHANS";
+			};
+			name = Release;
+		};
+		DA741FC91BC3F0480000E9D8 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = NIMHANSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.foofys.NIMHANSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = NIMHANS;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		DA741FCA1BC3F0480000E9D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = NIMHANSUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.foofys.NIMHANSUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = NIMHANS;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DA741F921BC3F0480000E9D8 /* Build configuration list for PBXProject "NIMHANS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA741FC01BC3F0480000E9D8 /* Debug */,
+				DA741FC11BC3F0480000E9D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA741FC21BC3F0480000E9D8 /* Build configuration list for PBXNativeTarget "NIMHANS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA741FC31BC3F0480000E9D8 /* Debug */,
+				DA741FC41BC3F0480000E9D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DA741FC51BC3F0480000E9D8 /* Build configuration list for PBXNativeTarget "NIMHANSTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA741FC61BC3F0480000E9D8 /* Debug */,
+				DA741FC71BC3F0480000E9D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DA741FC81BC3F0480000E9D8 /* Build configuration list for PBXNativeTarget "NIMHANSUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA741FC91BC3F0480000E9D8 /* Debug */,
+				DA741FCA1BC3F0480000E9D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		DA741FA11BC3F0480000E9D8 /* NIMHANS.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				DA741FA21BC3F0480000E9D8 /* NIMHANS.xcdatamodel */,
+			);
+			currentVersion = DA741FA21BC3F0480000E9D8 /* NIMHANS.xcdatamodel */;
+			path = NIMHANS.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = DA741F8F1BC3F0480000E9D8 /* Project object */;
+}

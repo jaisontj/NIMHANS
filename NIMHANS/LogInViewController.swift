@@ -10,14 +10,12 @@ import UIKit
 import CoreData
 import LocalAuthentication
 
+var currentUser: UserInformation?
 
 class LogInViewController: UIViewController,UITextFieldDelegate {
 
     @IBOutlet weak var passWord: UITextField!
     @IBOutlet weak var userName: UITextField!
-    
-    
-    var currentUser: UserInformation?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +46,7 @@ class LogInViewController: UIViewController,UITextFieldDelegate {
         if let docUserName = userName.text {
             fetchDataForUserName(docUserName, callback: { (isUserNamePresentInDB) -> Void in
                 if isUserNamePresentInDB {
-                    if self.currentUser?.password == self.passWord.text {
+                    if currentUser?.password == self.passWord.text {
                         self.authenticateUserWithBiometrics()
                     }
                     else {

@@ -15,5 +15,10 @@ class UserDetails: NSManagedObject {
     @NSManaged var userName: String?
     @NSManaged var userPassword: String?
     @NSManaged var patientInformation: NSSet?
+    
+    
+    func addPatients(patient: PatientDetails) {
+        self.mutableSetValueForKey("patientInformation").addObject(patient)
+    }
 
 }

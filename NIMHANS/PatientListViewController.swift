@@ -22,7 +22,7 @@ class PatientListViewController: UIViewController,UITableViewDelegate,UITableVie
     }
     
     @IBAction func logOutClicked(sender: UIBarButtonItem) {
-        print("logout clicked")
+        
     }
     
     @IBAction func addPatientClicked(sender: UIBarButtonItem) {
@@ -30,11 +30,15 @@ class PatientListViewController: UIViewController,UITableViewDelegate,UITableVie
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        if let count = currentUser?.patientDetails.count {
+            return count
+        }
+        return 0
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("patientName", forIndexPath: indexPath) as UITableViewCell
+        cell.textLabel?.text = currentUser?.patientDetails[indexPath.row].name
         return cell
     }
     

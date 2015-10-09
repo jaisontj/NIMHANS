@@ -194,8 +194,54 @@ class PatientInformationViewController: UITableViewController, DrawViewDelegate,
     @IBAction func dateOfInjury(sender: UIDatePicker) {
         
     }
+    
+    
     @IBAction func doneButtonClicked(sender: UIBarButtonItem) {
-
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        
+        let userDetailsEntry = NSEntityDescription.insertNewObjectForEntityForName("UserDetails", inManagedObjectContext: managedContext) as! UserDetails
+        
+                let patientEntry = NSEntityDescription.insertNewObjectForEntityForName("PatientDetails", inManagedObjectContext: managedContext) as! PatientDetails
+                patientEntry.name = patientName.text
+                patientEntry.age = patientAge.text
+                patientEntry.referredFrom = patientReferredFrom.text
+                patientEntry.placeOfInjury = placeOfInjury.text
+                
+                if isPatientMale.selected {
+                    patientEntry.gender = "male"
+                }
+                if isPatientFemale.selected {
+                    patientEntry.gender = "female"
+                }
+                if isPatientOther.selected {
+                    patientEntry.gender = "other"
+                }
+                
+                if isRTA.selected {
+                    patientEntry.isRTA = true
+                }
+                if isAssault.selected {
+                    patientEntry.isAssault = true
+                }
+                if isFall.selected {
+                    patientEntry.isFall = true
+                }
+                if isOther.selected {
+                    patientEntry.isOther = true
+                }
+                
+                userDetailsEntry.addPatients(patientEntry)
+        
+        do {
+            try managedContext.save()
+            print("Saved")
+            
+        }
+        catch {
+            print("error is \(error)")
+        }
     }
     
     //MARK: Drawview delegate methods

@@ -70,7 +70,7 @@ class CreateNewUserViewController: UIViewController {
         
         do {
             try managedContext.save()
-            showAlert(firstName.text! + "your account has been successfully created")
+            showAlert(firstName.text! + " your account has been successfully created")
         }
         catch {
             let nserror = error as NSError
@@ -78,4 +78,11 @@ class CreateNewUserViewController: UIViewController {
         }
         
     }
+    
+    @IBAction func cancelClicked(sender: UIBarButtonItem) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    
+    
 }

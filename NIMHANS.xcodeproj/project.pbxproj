@@ -22,6 +22,8 @@
 		DACB08801BC58D3D00CCDED6 /* PatientInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACB087F1BC58D3D00CCDED6 /* PatientInformation.swift */; };
 		DACB08821BC593CC00CCDED6 /* CreateNewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACB08811BC593CC00CCDED6 /* CreateNewUserViewController.swift */; };
 		DACB08841BC5A5ED00CCDED6 /* PatientListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACB08831BC5A5ED00CCDED6 /* PatientListViewController.swift */; };
+		DACB089C1BC6FBE600CCDED6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACB089B1BC6FBE600CCDED6 /* ViewController.swift */; };
+		DACB08A01BC6FBFC00CCDED6 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACB089E1BC6FBFC00CCDED6 /* Checkbox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		DACB087F1BC58D3D00CCDED6 /* PatientInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientInformation.swift; sourceTree = "<group>"; };
 		DACB08811BC593CC00CCDED6 /* CreateNewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewUserViewController.swift; sourceTree = "<group>"; };
 		DACB08831BC5A5ED00CCDED6 /* PatientListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientListViewController.swift; sourceTree = "<group>"; };
+		DACB089B1BC6FBE600CCDED6 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DACB089E1BC6FBFC00CCDED6 /* Checkbox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,9 +130,11 @@
 			children = (
 				DACB087B1BC58A2600CCDED6 /* Data Model */,
 				DA741F9A1BC3F0480000E9D8 /* AppDelegate.swift */,
+				DACB089B1BC6FBE600CCDED6 /* ViewController.swift */,
 				DA741FCB1BC3F6890000E9D8 /* LogInViewController.swift */,
 				DACB08811BC593CC00CCDED6 /* CreateNewUserViewController.swift */,
 				DACB08831BC5A5ED00CCDED6 /* PatientListViewController.swift */,
+				DACB089E1BC6FBFC00CCDED6 /* Checkbox.swift */,
 				DA741F9E1BC3F0480000E9D8 /* Main.storyboard */,
 				DA741FA41BC3F0480000E9D8 /* Assets.xcassets */,
 				DA741FA61BC3F0480000E9D8 /* LaunchScreen.storyboard */,
@@ -313,12 +319,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DACB089C1BC6FBE600CCDED6 /* ViewController.swift in Sources */,
 				DACB08821BC593CC00CCDED6 /* CreateNewUserViewController.swift in Sources */,
 				DA741FA31BC3F0480000E9D8 /* NIMHANS.xcdatamodeld in Sources */,
 				DACB087E1BC58D3300CCDED6 /* UserInformation.swift in Sources */,
 				DA741F9B1BC3F0480000E9D8 /* AppDelegate.swift in Sources */,
 				DACB08801BC58D3D00CCDED6 /* PatientInformation.swift in Sources */,
 				DACB087A1BC5892E00CCDED6 /* PatientDetails.swift in Sources */,
+				DACB08A01BC6FBFC00CCDED6 /* Checkbox.swift in Sources */,
 				DA741FCC1BC3F6890000E9D8 /* LogInViewController.swift in Sources */,
 				DACB08761BC5892D00CCDED6 /* UserDetails.swift in Sources */,
 				DACB08841BC5A5ED00CCDED6 /* PatientListViewController.swift in Sources */,

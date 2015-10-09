@@ -45,6 +45,7 @@ class Checkbox : UIButton {
     }
     
     func onTouchUpInside(sender: UIButton) {
+        
         self.selected = !self.selected;
         mDelegate?.didSelectCheckbox(self.selected, identifier: self.tag, title: self.titleLabel!.text!);
     }

@@ -22,13 +22,12 @@ class PatientListViewController: UIViewController,UITableViewDelegate,UITableVie
     }
     
     @IBAction func logOutClicked(sender: UIBarButtonItem) {
+        print("logout clicked")
     }
     
     @IBAction func addPatientClicked(sender: UIBarButtonItem) {
         self.performSegueWithIdentifier("showsPatientDetails", sender: nil)
     }
-    
-    
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1

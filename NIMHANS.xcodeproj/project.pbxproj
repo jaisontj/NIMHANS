@@ -24,7 +24,7 @@
 		DAD5C0A91BC795BA00C97185 /* PatientInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5C0A81BC795BA00C97185 /* PatientInformationViewController.swift */; };
 		DAD5C0AB1BC7BAA300C97185 /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5C0AA1BC7BAA300C97185 /* DrawView.swift */; };
 		DAD5C0AD1BC7BB6500C97185 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5C0AC1BC7BB6500C97185 /* Line.swift */; };
-		DAD5C0B51BC7C82D00C97185 /* PatientDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5C0B31BC7C82D00C97185 /* PatientDetails.swift */; };
+		DAE952F71BC84A4400FA8E8A /* PatientDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE952F51BC84A4400FA8E8A /* PatientDetails.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +68,7 @@
 		DAD5C0A81BC795BA00C97185 /* PatientInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientInformationViewController.swift; sourceTree = "<group>"; };
 		DAD5C0AA1BC7BAA300C97185 /* DrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
 		DAD5C0AC1BC7BB6500C97185 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
-		DAD5C0B31BC7C82D00C97185 /* PatientDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PatientDetails.swift; path = ../PatientDetails.swift; sourceTree = "<group>"; };
+		DAE952F51BC84A4400FA8E8A /* PatientDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientDetails.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,7 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				DACB08741BC5892D00CCDED6 /* UserDetails.swift */,
-				DAD5C0B31BC7C82D00C97185 /* PatientDetails.swift */,
+				DAE952F51BC84A4400FA8E8A /* PatientDetails.swift */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -332,7 +332,6 @@
 			files = (
 				DACB08821BC593CC00CCDED6 /* CreateNewUserViewController.swift in Sources */,
 				DA741FA31BC3F0480000E9D8 /* NIMHANS.xcdatamodeld in Sources */,
-				DAD5C0B51BC7C82D00C97185 /* PatientDetails.swift in Sources */,
 				DAD5C0A91BC795BA00C97185 /* PatientInformationViewController.swift in Sources */,
 				DACB087E1BC58D3300CCDED6 /* UserInformation.swift in Sources */,
 				DAD5C0AD1BC7BB6500C97185 /* Line.swift in Sources */,
@@ -342,6 +341,7 @@
 				DA741FCC1BC3F6890000E9D8 /* LogInViewController.swift in Sources */,
 				DACB08761BC5892D00CCDED6 /* UserDetails.swift in Sources */,
 				DACB08841BC5A5ED00CCDED6 /* PatientListViewController.swift in Sources */,
+				DAE952F71BC84A4400FA8E8A /* PatientDetails.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

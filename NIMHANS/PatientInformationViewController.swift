@@ -195,53 +195,106 @@ class PatientInformationViewController: UITableViewController, DrawViewDelegate,
         
     }
     
+    func save() {
+        deleteSavedData()
+        addUserToDB()
+    }
     
-    @IBAction func doneButtonClicked(sender: UIBarButtonItem) {
+    func deleteSavedData() {
+        let appDelegate =
+        UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        let fetchRequest = NSFetchRequest(entityName: "UserDetails")
+        
+        let fetchedResults: [NSManagedObject]?
+        do {
+            fetchedResults = try managedContext.executeFetchRequest(fetchRequest) as? [NSManagedObject]
+            if let results = fetchedResults {
+                for user in results {
+                    if let userTemp = user as? UserDetails {
+                        if userTemp.userName == currentUser?.userName {
+                            managedContext.deleteObject(user)
+                        }
+                    }
+                }
+            }
+        }
+        catch {
+            print("error: \(error)")
+        }
+    }
+    
+    private func addUserToDB() {
         let appDelegate =
         UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
         
-        let userDetailsEntry = NSEntityDescription.insertNewObjectForEntityForName("UserDetails", inManagedObjectContext: managedContext) as! UserDetails
+        let newUserEntry =
+        NSEntityDescription.insertNewObjectForEntityForName("UserDetails", inManagedObjectContext: managedContext) as! UserDetails
         
-                let patientEntry = NSEntityDescription.insertNewObjectForEntityForName("PatientDetails", inManagedObjectContext: managedContext) as! PatientDetails
-                patientEntry.name = patientName.text
-                patientEntry.age = patientAge.text
-                patientEntry.referredFrom = patientReferredFrom.text
-                patientEntry.placeOfInjury = placeOfInjury.text
+        newUserEntry.userName = currentUser?.userName
+        newUserEntry.userPassword = currentUser?.password
+        if let patients = currentUser?.patientDetails {
+            for patient in patients {
+                let patientEntry =
+                NSEntityDescription.insertNewObjectForEntityForName("PatientDetails", inManagedObjectContext: managedContext) as! PatientDetails
                 
-                if isPatientMale.selected {
-                    patientEntry.gender = "male"
-                }
-                if isPatientFemale.selected {
-                    patientEntry.gender = "female"
-                }
-                if isPatientOther.selected {
-                    patientEntry.gender = "other"
-                }
+                patientEntry.name = patient.name
+                patientEntry.age = patient.age
+                patientEntry.referredFrom = patient.referredFrom
+                patientEntry.placeOfInjury = patient.placeOfInjury
+                patientEntry.gender = patient.gender
+                patientEntry.isRTA = patient.isRTA
                 
-                if isRTA.selected {
-                    patientEntry.isRTA = true
-                }
-                if isAssault.selected {
-                    patientEntry.isAssault = true
-                }
-                if isFall.selected {
-                    patientEntry.isFall = true
-                }
-                if isOther.selected {
-                    patientEntry.isOther = true
-                }
-                
-                userDetailsEntry.addPatients(patientEntry)
+                newUserEntry.addPatients(patientEntry)
+            }
+        }
+        
+        let patientEntry =
+        NSEntityDescription.insertNewObjectForEntityForName("PatientDetails", inManagedObjectContext: managedContext) as! PatientDetails
+        
+        patientEntry.name = patientName.text
+        patientEntry.age = patientAge.text
+        patientEntry.referredFrom = patientReferredFrom.text
+        patientEntry.placeOfInjury = placeOfInjury.text
+        
+        if isPatientMale.selected {
+            patientEntry.gender = "male"
+        }
+        if isPatientFemale.selected {
+            patientEntry.gender = "female"
+        }
+        if isPatientOther.selected {
+            patientEntry.gender = "other"
+        }
+        
+        if isRTA.selected {
+            patientEntry.isRTA = true
+        }
+        if isAssault.selected {
+            patientEntry.isAssault = true
+        }
+        if isFall.selected {
+            patientEntry.isFall = true
+        }
+        if isOther.selected {
+            patientEntry.isOther = true
+        }
+        
+        newUserEntry.addPatients(patientEntry)
         
         do {
             try managedContext.save()
-            print("Saved")
-            
         }
         catch {
-            print("error is \(error)")
+            let nserror = error as NSError
+            NSLog("Unresolved error \(nserror), \(nserror.userInfo)")
         }
+        
+    }
+    
+    @IBAction func doneButtonClicked(sender: UIBarButtonItem) {
+        save()
     }
     
     //MARK: Drawview delegate methods

@@ -1,16 +1,54 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8118.17" systemVersion="14F27" minimumToolsVersion="Automatic">
     <entity name="PatientDetails" representedClassName="PatientDetails" syncable="YES">
+        <attribute name="abdominalInjury" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="activePeripheralBleeding" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="age" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="amnesia" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="bleedingFromEar" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="bleedingFromNose" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="bpAfterHalfHour" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="bpOnArrival" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="chestInjury" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="clearAirway" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="csf" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="ctScanHour" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="didLoseConsciousness" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="didLucidDream" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="fractures" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="gaspingRespiration" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="gcsChangeNo" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="gcsChangeYes" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="gender" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="informantName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="intubationAirway" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isAlcoholNo" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isAlcoholYes" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="isAssault" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isDriver" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isEyewitness" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="isFall" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isHearsay" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isHelmetNo" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isHelmetYes" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="isOther" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isPassenger" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isPedestrian" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="isRTA" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="leftCarotidPulsation" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="normalRespiration" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="otorrhoea" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="peripheralPulses" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="placeOfInjury" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="pulseRatePerMin" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="referredFrom" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="siezures" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="spineDeformity" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="spineTenderness" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="tachypnoenicRespiration" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="vomiting" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="wounds" optional="YES" attributeType="Boolean" syncable="YES"/>
         <relationship name="doctorDetails" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserDetails" inverseName="patientInformation" inverseEntity="UserDetails" syncable="YES"/>
     </entity>
     <entity name="UserDetails" representedClassName="UserDetails" syncable="YES">
@@ -19,7 +57,7 @@
         <relationship name="patientInformation" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PatientDetails" inverseName="doctorDetails" inverseEntity="PatientDetails" syncable="YES"/>
     </entity>
     <elements>
-        <element name="PatientDetails" positionX="-45" positionY="18" width="128" height="210"/>
+        <element name="PatientDetails" positionX="-45" positionY="18" width="128" height="780"/>
         <element name="UserDetails" positionX="-263" positionY="-0" width="128" height="88"/>
     </elements>
 </model>

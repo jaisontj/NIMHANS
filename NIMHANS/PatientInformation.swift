@@ -19,6 +19,7 @@ class PatientInformation {
     var isFall: Bool?
     var isOther: Bool?
     var isAssault: Bool?
+    
     var doctorDetails: UserDetails?
     
     init(data: PatientDetails) {
@@ -28,33 +29,23 @@ class PatientInformation {
         self.referredFrom = data.referredFrom
         self.informantName = data.informantName
         self.placeOfInjury = data.placeOfInjury
-        
-        if data.isRTA!.isEqualToValue(NSNumber(bool: true)) {
-            self.isRTA = true
-        }
-        else {
-            self.isRTA = false
-        }
-        
-        if data.isOther!.isEqualToValue(NSNumber(bool: true)) {
-            self.isOther = true
-        }
-        else {
-            self.isOther = false
-        }
-        
-        if data.isAssault!.isEqualToValue(NSNumber(bool: true)) {
-            self.isAssault = true
-        }
-        else {
-            self.isAssault = false
+    
+        self.isRTA = checkBool(data.isRTA)
+        self.isFall = checkBool(data.isFall)
+        self.isOther = checkBool(data.isOther)
+        self.isAssault = checkBool(data.isAssault)
+    }
+    
+    private func checkBool(value: NSNumber?) -> Bool {
+        if let val = value {
+            if val.isEqualToValue(NSNumber(bool: true)) {
+                return true
+            }
+            else {
+                return false
+            }
         }
         
-        if data.isFall!.isEqualToValue(NSNumber(bool: true)) {
-            self.isFall = true
-        }
-        else {
-            self.isFall = false
-        }
+        return false
     }
 }

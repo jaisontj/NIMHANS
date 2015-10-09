@@ -52,7 +52,9 @@ class CreateNewUserViewController: UIViewController {
     
     private func showAlert(message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        let dismiss = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Cancel, handler: nil)
+        let dismiss = UIAlertAction(title: message, style: UIAlertActionStyle.Cancel) { (action) -> Void in
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
         alert.addAction(dismiss)
         self.presentViewController(alert, animated: true, completion: nil)
     }
@@ -67,7 +69,7 @@ class CreateNewUserViewController: UIViewController {
         
         newUserEntry.userName = userName.text
         newUserEntry.userPassword = password.text
-        
+        newUserEntry.patientInformation = nil
         do {
             try managedContext.save()
             showAlert(firstName.text! + " your account has been successfully created")

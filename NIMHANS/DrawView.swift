@@ -30,6 +30,7 @@ class DrawView: UIView {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         if let delegate = self.delegate {
             delegate.startedDrawing()
+            self.backgroundColor = UIColor.lightGrayColor()
         }
         if let touch = touches.first {
             lastPoint = touch.locationInView(self)
@@ -50,6 +51,7 @@ class DrawView: UIView {
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         if let delegate = self.delegate {
             delegate.stoppedDrawing()
+            self.backgroundColor = UIColor.lightGrayColor()
         }
     }
     

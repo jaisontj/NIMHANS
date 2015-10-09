@@ -11,6 +11,7 @@ import CoreData
 import LocalAuthentication
 
 var currentUser: UserInformation?
+var currentUserData: UserDetails?
 
 class LogInViewController: UIViewController,UITextFieldDelegate {
 
@@ -74,6 +75,8 @@ class LogInViewController: UIViewController,UITextFieldDelegate {
                     let data = UserInformation(data: user)
                     if name == data.userName {
                         currentUser = data
+                        currentUserData = user
+                        print("count:"+(currentUser?.patientDetails.count)!)
                         userFound = true
                         callback(true)
                         break
@@ -110,8 +113,6 @@ class LogInViewController: UIViewController,UITextFieldDelegate {
                     self.logUserIn()
                 }
                 else {
-                    // If authentication failed then show a message to the console with a short description.
-                    // In case that the error is a user fallback, then show the password alert view.
                     print(evalPolicyError?.localizedDescription)
                     
                     switch evalPolicyError!.code {

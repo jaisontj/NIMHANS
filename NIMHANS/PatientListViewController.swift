@@ -21,8 +21,13 @@ class PatientListViewController: UIViewController,UITableViewDelegate,UITableVie
         
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
+        tableView.reloadData()
+    }
+    
     @IBAction func logOutClicked(sender: UIBarButtonItem) {
-        
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func addPatientClicked(sender: UIBarButtonItem) {
@@ -31,9 +36,25 @@ class PatientListViewController: UIViewController,UITableViewDelegate,UITableVie
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let count = currentUser?.patientDetails.count {
+            print("inside count")
             return count
         }
+        else {
+            print("message label add")
+            addMessageLabel()
+        }
         return 0
+    }
+    
+    private func addMessageLabel() {
+        let messageLabel = UILabel()
+        messageLabel.frame = CGRectMake(0.0, 0.0, self.view.frame.size.width, self.view.frame.size.height)
+        messageLabel.textAlignment = NSTextAlignment.Center
+        messageLabel.text = "Schedule for this Event has not been decided yet"
+        messageLabel.textColor = UIColor.grayColor()
+        messageLabel.font = UIFont(name: "Helvetica", size: 25)
+        messageLabel.numberOfLines = 0
+        view.addSubview(messageLabel)
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

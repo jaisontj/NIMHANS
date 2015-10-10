@@ -156,6 +156,10 @@ class PatientInformation {
         self.referredFrom = data.referredFrom
         self.informantName = data.informantName
         self.placeOfInjury = data.placeOfInjury
+        self.timeOfExamination = data.timeOfExamination
+        self.timeOfInjury = data.timeOfInjury
+        self.dateOfExamination = data.dateOfExamination
+        self.dateOfInjury = data.dateOfInjury
     
         self.isRTA = checkBool(data.isRTA)
         self.isFall = checkBool(data.isFall)

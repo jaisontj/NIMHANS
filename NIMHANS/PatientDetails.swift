@@ -105,7 +105,7 @@ class PatientDetails: NSManagedObject {
     
     
     
-    public func addPoints(point: LinePoints,keyValue: String) {
+    internal func addPoints(point: LinePoints,keyValue: String) {
         self.mutableSetValueForKey(keyValue).addObject(point)
     }
 }

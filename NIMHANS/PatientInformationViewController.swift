@@ -1266,9 +1266,6 @@ class PatientInformationViewController: UITableViewController, DrawViewDelegate,
         }
         
         ctScanHours.text = selectedPatient?.ctScanHours
-        
-        
-        //Draw Views
      
         
         //Final Management Plan

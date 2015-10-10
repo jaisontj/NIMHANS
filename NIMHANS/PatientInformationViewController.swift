@@ -31,6 +31,7 @@ class PatientInformationViewController: UITableViewController, DrawViewDelegate,
     
     @IBOutlet weak var ns1Monday: UIButton!
     @IBOutlet weak var ns2Wednesday: UIButton!
+    @IBOutlet weak var ns3Friday: UIButton!
     
     //History of injury in detail
     
@@ -90,24 +91,87 @@ class PatientInformationViewController: UITableViewController, DrawViewDelegate,
     @IBOutlet weak var spineTenderness: UIButton!
     @IBOutlet weak var spineDeformity: UIButton!
     
+    //Neurological Examination
+    
+    @IBOutlet weak var eoScoreInitial: UITextField!
+    @IBOutlet weak var eoScoreAfter: UITextField!
+    
+    @IBOutlet weak var mrScoreInitial: UITextField!
+    @IBOutlet weak var mrScoreAfter: UITextField!
+    
+    
+    @IBOutlet weak var vrScoreInitial: UITextField!
+    @IBOutlet weak var vrScoreAfter: UITextField!
+    
+    @IBOutlet weak var totalInitial: UITextField!
+    @IBOutlet weak var totalAfter: UITextField!
+    
+    @IBOutlet weak var horRightPresent: UIButton!
+    @IBOutlet weak var horRightAbsent: UIButton!
+    @IBOutlet weak var horRightNotTested: UIButton!
+    
+    @IBOutlet weak var horLeftPresent: UIButton!
+    @IBOutlet weak var horLeftAbsent: UIButton!
+    @IBOutlet weak var horLeftNotTested: UIButton!
+    
+    @IBOutlet weak var plrRightmm: UITextField!
+    @IBOutlet weak var plrRightNormal: UIButton!
+    @IBOutlet weak var plrRightSluggish: UIButton!
+    @IBOutlet weak var plrRightAbsent: UIButton!
+    @IBOutlet weak var plrRightCannotAsses: UIButton!
+    
+    
+    @IBOutlet weak var plrLeftmm: UITextField!
+    @IBOutlet weak var plrLeftNormal: UIButton!
+    @IBOutlet weak var plrLeftSluggish: UIButton!
+    @IBOutlet weak var plrLeftAbsent: UIButton!
+    @IBOutlet weak var plrLeftCannotAssess: UIButton!
+    
+    @IBOutlet weak var mseUpperRightTone: UITextField!
+    @IBOutlet weak var mseUpperLeftTone: UITextField!
+    @IBOutlet weak var mseUpperRightPower: UITextField!
+    @IBOutlet weak var mseUpperLeftPower: UITextField!
+    
+    
+    @IBOutlet weak var mseLowerRightTone: UITextField!
+    @IBOutlet weak var mseLowerLeftTone: UITextField!
+    @IBOutlet weak var mseLowerRightPower: UITextField!
+    @IBOutlet weak var mseLowerLeftPower: UITextField!
+    
     //Clinical Impressions
     @IBOutlet weak var changesInGCSYes: UIButton!
     @IBOutlet weak var changesInGCSNo: UIButton!
-    
     @IBOutlet weak var ctScanHours: UITextField!
+    @IBOutlet weak var ctScanDrawView: DrawView!
+    @IBOutlet weak var writeCTScan: UIButton!
+
     
     
     //Draw Views
     
-    @IBOutlet weak var ctScanDrawView: DrawView!
+    
+    @IBOutlet weak var otherNeurologicalDeficits: DrawView!
     @IBOutlet weak var managementPlanView: DrawView!
     @IBOutlet weak var signature: DrawView!
     @IBOutlet weak var residentNameView: DrawView!
     @IBOutlet weak var hospitalCourseView: DrawView!
     @IBOutlet weak var otherRelevantInfoView: DrawView!
     
-  
+    @IBOutlet weak var conditionAtDischarge: DrawView!
     
+    //Final Management Plan
+    @IBOutlet weak var treatmentView: DrawView!
+    @IBOutlet weak var finalTime: UITextField!
+    @IBOutlet weak var finalDate: UITextField!
+    @IBOutlet weak var finalSignatureView: DrawView!
+    @IBOutlet weak var finalNameView: DrawView!
+    
+    
+    //Follow Up OPD
+    
+    @IBOutlet weak var followUpMon: UIButton!
+    @IBOutlet weak var followUpWed: UIButton!
+    @IBOutlet weak var followUpFri: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -121,6 +185,7 @@ class PatientInformationViewController: UITableViewController, DrawViewDelegate,
     
     func setDelegates() {
         ctScanDrawView.delegate = self
+        otherNeurologicalDeficits.delegate = self
         managementPlanView.delegate = self
         signature.delegate = self
         residentNameView.delegate = self
@@ -181,6 +246,43 @@ class PatientInformationViewController: UITableViewController, DrawViewDelegate,
         //Details of spine examination
         setButton(spineTenderness)
         setButton(spineDeformity)
+        
+        //OPD
+        
+        setButton(ns1Monday)
+        setButton(ns2Wednesday)
+        setButton(ns3Friday)
+        
+        setButton(horRightPresent)
+        setButton(horRightAbsent)
+        setButton(horRightNotTested)
+        
+        setButton(horLeftPresent)
+        setButton(horLeftAbsent)
+        setButton(horLeftNotTested)
+        
+        setButton(plrRightNormal)
+        setButton(plrRightSluggish)
+        setButton(plrRightAbsent)
+        setButton(plrRightCannotAsses)
+        
+        
+        setButton(plrLeftNormal)
+        setButton(plrLeftSluggish)
+        setButton(plrLeftAbsent)
+        setButton(plrLeftCannotAssess)
+        
+        //Clinical Impressions
+        setButton(changesInGCSYes)
+        setButton(changesInGCSNo)
+        setButton(writeCTScan)
+        
+        //Follow Up OPD
+        
+        setButton(followUpMon)
+        setButton(followUpWed)
+        setButton(followUpFri)
+        
     }
     
     

@@ -1600,7 +1600,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Motor Respnse Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1tN-m3-Smo">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Motor Response Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1tN-m3-Smo">
                                                     <rect key="frame" x="8" y="313" width="584" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="sP9-SK-aGV"/>
@@ -1694,7 +1694,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                 </textField>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Motor Respnse Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ub-ci-Xy3">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Verbal Response Score" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ub-ci-Xy3">
                                                     <rect key="frame" x="8" y="657" width="584" height="30"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="6re-Xr-I9b"/>
@@ -2919,7 +2919,7 @@
                                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits"/>
                                                 </textField>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vtu-s7-Frs">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vtu-s7-Frs" customClass="DrawView" customModule="NIMHANS" customModuleProvider="target">
                                                     <rect key="frame" x="335" y="501" width="257" height="118"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
@@ -2932,7 +2932,7 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WKn-8l-nwZ">
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WKn-8l-nwZ" customClass="DrawView" customModule="NIMHANS" customModuleProvider="target">
                                                     <rect key="frame" x="335" y="627" width="257" height="118"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
@@ -3086,6 +3086,7 @@
                         <outlet property="changesInGCSNo" destination="kVY-8o-Sh8" id="gBs-JP-uy7"/>
                         <outlet property="changesInGCSYes" destination="oo6-PP-ibj" id="Drt-BU-1C0"/>
                         <outlet property="chestInjury" destination="GdM-cC-Yj3" id="JSv-VW-WU1"/>
+                        <outlet property="conditionAtDischarge" destination="vYk-3l-31X" id="1NX-uQ-hZ5"/>
                         <outlet property="csfRhin" destination="gFH-MR-qJM" id="qS3-oa-Kbz"/>
                         <outlet property="ctScanDrawView" destination="aWk-6a-hmS" id="Udn-6o-Xhz"/>
                         <outlet property="ctScanHours" destination="G9h-i9-Lki" id="SlE-W6-KgP"/>
@@ -3093,10 +3094,25 @@
                         <outlet property="didHaveSeizures" destination="NHK-3Q-SwD" id="Lx8-e1-kiG"/>
                         <outlet property="didLoseConsciousness" destination="rde-ew-edu" id="Jib-Lt-SxU"/>
                         <outlet property="didVomit" destination="qts-lT-SAB" id="Zmz-Bm-OjW"/>
+                        <outlet property="eoScoreAfter" destination="HHT-zp-I6F" id="gZp-GJ-vTE"/>
+                        <outlet property="eoScoreInitial" destination="x0d-HE-l3C" id="QVk-j5-Tag"/>
+                        <outlet property="finalDate" destination="V7p-AU-YHt" id="pJm-gw-dAf"/>
+                        <outlet property="finalNameView" destination="WKn-8l-nwZ" id="iOm-uF-XpV"/>
+                        <outlet property="finalSignatureView" destination="Vtu-s7-Frs" id="5dM-n6-Lem"/>
+                        <outlet property="finalTime" destination="4Se-zX-7wb" id="FRw-sT-Nsl"/>
+                        <outlet property="followUpFri" destination="fBu-YV-ALD" id="ePs-ki-hr4"/>
+                        <outlet property="followUpMon" destination="Bgd-0j-2dD" id="qSc-fv-D9c"/>
+                        <outlet property="followUpWed" destination="Are-wU-7rr" id="5XY-Xa-OAS"/>
                         <outlet property="fractures" destination="UyJ-W3-nYw" id="sQa-7y-qNr"/>
                         <outlet property="hasAmnesia" destination="U7M-ku-eiD" id="0w9-JD-ukD"/>
                         <outlet property="helmetNo" destination="hVC-Gd-ffr" id="T28-3Y-nkM"/>
                         <outlet property="helmetYes" destination="tsb-xR-eDL" id="QtC-uU-ZAi"/>
+                        <outlet property="horLeftAbsent" destination="84E-Gp-l3L" id="1hu-qA-mGK"/>
+                        <outlet property="horLeftNotTested" destination="47N-UT-yBW" id="U3E-kr-rQJ"/>
+                        <outlet property="horLeftPresent" destination="ksg-bU-527" id="sDe-JD-bcL"/>
+                        <outlet property="horRightAbsent" destination="aFc-AK-j6h" id="Dje-Di-pYS"/>
+                        <outlet property="horRightNotTested" destination="KzL-ue-5bq" id="LCe-aY-8h9"/>
+                        <outlet property="horRightPresent" destination="Ugw-EW-1h1" id="uEN-qW-Mw2"/>
                         <outlet property="hospitalCourseView" destination="Hf7-DQ-AhI" id="B1Z-KX-Mjl"/>
                         <outlet property="informantsName" destination="Gvs-Vb-DVI" id="G2N-tr-B0Q"/>
                         <outlet property="isAssault" destination="oIs-Qx-E5E" id="Vvd-UN-6HM"/>
@@ -3113,9 +3129,21 @@
                         <outlet property="isPedestrian" destination="udd-ao-M0W" id="kB6-l9-5XW"/>
                         <outlet property="isRTA" destination="umQ-ha-hVH" id="D9r-4M-FjZ"/>
                         <outlet property="managementPlanView" destination="eIZ-DO-SLO" id="ruv-oA-gDp"/>
+                        <outlet property="mrScoreAfter" destination="6rx-b4-9Lf" id="aUB-fl-S4F"/>
+                        <outlet property="mrScoreInitial" destination="NfM-2F-8et" id="9Ev-0z-lUO"/>
+                        <outlet property="mseLowerLeftPower" destination="GAC-Eg-zgs" id="ORL-5E-Oe2"/>
+                        <outlet property="mseLowerLeftTone" destination="lIg-6N-IId" id="wiZ-W2-mIG"/>
+                        <outlet property="mseLowerRightPower" destination="khq-gp-tTy" id="145-7W-V9V"/>
+                        <outlet property="mseLowerRightTone" destination="VXg-Ed-UwI" id="PHD-6s-14M"/>
+                        <outlet property="mseUpperLeftPower" destination="2Ga-Wm-w7y" id="Dgs-gr-Enc"/>
+                        <outlet property="mseUpperLeftTone" destination="IcQ-LR-JJi" id="7KL-Vi-OJD"/>
+                        <outlet property="mseUpperRightPower" destination="LWT-g1-QqF" id="0pr-LO-l40"/>
+                        <outlet property="mseUpperRightTone" destination="Xb5-9A-DgX" id="6wW-0Q-mLU"/>
                         <outlet property="navBarTitle" destination="Okr-7B-S5b" id="Lvc-Z9-kLw"/>
                         <outlet property="ns1Monday" destination="431-6Y-Ha3" id="51d-a9-iN1"/>
                         <outlet property="ns2Wednesday" destination="Hsu-0P-alJ" id="MaZ-Wx-MYH"/>
+                        <outlet property="ns3Friday" destination="UeO-vd-Y18" id="dpq-Pp-zS0"/>
+                        <outlet property="otherNeurologicalDeficits" destination="LVr-Iv-GCk" id="bwY-TI-1ru"/>
                         <outlet property="otherRelevantInfoView" destination="DUR-zh-DU0" id="l4G-hh-Ugi"/>
                         <outlet property="otorrhoea" destination="dow-Th-JC8" id="Avs-Qa-KYM"/>
                         <outlet property="patientAge" destination="XOi-UL-Jd1" id="5gv-Bo-kW8"/>
@@ -3123,6 +3151,16 @@
                         <outlet property="patientReferredFrom" destination="DAj-7o-SIj" id="VYY-1c-irB"/>
                         <outlet property="peripheralPulses" destination="znD-Hb-l4Q" id="ZeR-4F-05z"/>
                         <outlet property="placeOfInjury" destination="Dif-Xc-jDk" id="Kr2-v9-tif"/>
+                        <outlet property="plrLeftAbsent" destination="2kz-iM-gg7" id="Nb9-Pf-HQh"/>
+                        <outlet property="plrLeftCannotAssess" destination="7Zz-2j-m4e" id="j96-Wf-KbE"/>
+                        <outlet property="plrLeftNormal" destination="6fk-lu-fAn" id="2cI-Tm-rXl"/>
+                        <outlet property="plrLeftSluggish" destination="hQQ-i7-ULI" id="xhW-nh-Qfd"/>
+                        <outlet property="plrLeftmm" destination="EUO-ic-hhf" id="XCk-je-rVA"/>
+                        <outlet property="plrRightAbsent" destination="Iac-s0-GKJ" id="fD8-pL-tvj"/>
+                        <outlet property="plrRightCannotAsses" destination="IZH-ou-47Z" id="sVO-qI-lZk"/>
+                        <outlet property="plrRightNormal" destination="Fxb-xy-YcA" id="4FP-mE-ShS"/>
+                        <outlet property="plrRightSluggish" destination="wpP-uK-vlf" id="FtU-5C-pBc"/>
+                        <outlet property="plrRightmm" destination="fJw-MQ-p65" id="KrN-q6-FYR"/>
                         <outlet property="pulseRatePerMin" destination="RD3-Zi-Boc" id="s2F-pS-zlb"/>
                         <outlet property="residentNameView" destination="auh-FS-MBp" id="y4b-pt-4ny"/>
                         <outlet property="respirationGasping" destination="2dz-nx-WsM" id="dXP-f5-zT8"/>
@@ -3131,8 +3169,14 @@
                         <outlet property="signature" destination="FC6-QM-9Kv" id="CSk-m2-UY0"/>
                         <outlet property="spineDeformity" destination="yce-h8-0yZ" id="G0t-Qa-aGX"/>
                         <outlet property="spineTenderness" destination="ekh-Fm-vic" id="gXd-Qp-9BE"/>
+                        <outlet property="totalAfter" destination="Ny2-rV-M3E" id="dc0-5y-OkQ"/>
+                        <outlet property="totalInitial" destination="lnq-Jx-OQr" id="ckM-Vx-hFc"/>
+                        <outlet property="treatmentView" destination="tz1-JY-jmQ" id="hTD-fi-PCh"/>
+                        <outlet property="vrScoreAfter" destination="sXj-cv-tcY" id="GVV-yl-IqG"/>
+                        <outlet property="vrScoreInitial" destination="ELv-UF-t0b" id="NQG-g8-c8O"/>
                         <outlet property="wasEyewithnessPresent" destination="4Mh-9F-JIO" id="a1x-TW-NRa"/>
                         <outlet property="wounds" destination="XK7-ji-m0d" id="3CS-hL-nzH"/>
+                        <outlet property="writeCTScan" destination="9Zy-Kc-7vu" id="rhY-LY-SWG"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tgd-sL-kQ1" userLabel="First Responder" sceneMemberID="firstResponder"/>

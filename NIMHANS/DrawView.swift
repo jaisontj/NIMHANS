@@ -8,39 +8,26 @@
 
 import UIKit
 
-protocol DrawViewDelegate {
-    func startedDrawing()
-    func stoppedDrawing()
-}
-
 class DrawView: UIView {
     
     var lines: [Line] = []
     var lastPoint: CGPoint!
     
-    var delegate: DrawViewDelegate?
-
     required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
-        self.backgroundColor = UIColor.whiteColor()
+        self.backgroundColor = UIColor.lightGrayColor()
 
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        if let delegate = self.delegate {
-            delegate.startedDrawing()
-        }
         if let touch = touches.first {
             lastPoint = touch.locationInView(self)
+            lines.append(Line(start: lastPoint, end: lastPoint))
         }
         super.touchesBegan(touches , withEvent:event)
     }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        if let delegate = self.delegate {
-            delegate.startedDrawing()
-        }
         if let touch = touches.first  {
             let newPoint = touch.locationInView(self)
             lines.append(Line(start: lastPoint, end: newPoint))
@@ -50,11 +37,6 @@ class DrawView: UIView {
         self.setNeedsDisplay()
     }
     
-    override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        if let delegate = self.delegate {
-            delegate.stoppedDrawing()
-        }
-    }
     
     override func drawRect(rect: CGRect) {
         let context = UIGraphicsGetCurrentContext()

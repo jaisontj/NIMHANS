@@ -10,9 +10,11 @@ import UIKit
 import Foundation
 import CoreData
 
-class PatientInformationViewController: UITableViewController, DrawViewDelegate,UITextFieldDelegate {
+class PatientInformationViewController: UITableViewController,UITextFieldDelegate {
     
+    var numberOfClicks = 0
     
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     //Patient details
     
     @IBOutlet weak var patientName: UITextField!
@@ -147,13 +149,22 @@ class PatientInformationViewController: UITableViewController, DrawViewDelegate,
     @IBOutlet weak var changesInGCSNo: UIButton!
     @IBOutlet weak var ctScanHours: UITextField!
     @IBOutlet weak var ctScanDrawView: DrawView!
-    @IBOutlet weak var writeCTScan: UIButton!
-
     
+    
+    @IBOutlet weak var writeCTScan: UIButton!
+    @IBOutlet weak var writeNeurologicalDefects: UIButton!
+    @IBOutlet weak var writeOtherRelevantInfo: UIButton!
+    @IBOutlet weak var writeManagementPlan: UIButton!
+    @IBOutlet weak var writeSignature: UIButton!
+    @IBOutlet weak var writeNameOfResident: UIButton!
+    @IBOutlet weak var writeCourse: UIButton!
+    @IBOutlet weak var conditionAtDIscharge: UIButton!
+    @IBOutlet weak var finalManagementPlan: UIButton!
+    @IBOutlet weak var finalSignature: UIButton!
+    @IBOutlet weak var finalName: UIButton!
     
     //Draw Views
-    
-    
+
     @IBOutlet weak var otherNeurologicalDeficits: DrawView!
     @IBOutlet weak var managementPlanView: DrawView!
     @IBOutlet weak var signature: DrawView!
@@ -181,20 +192,10 @@ class PatientInformationViewController: UITableViewController, DrawViewDelegate,
         super.viewDidLoad()
         setUpButtons()
         setUpPickers()
-        setDelegates()
                 
         if shouldDisplayPatientInfo {
             displayPatientInformation()
         }
-    }
-    
-    func setDelegates() {
-        ctScanDrawView.delegate = self
-        otherNeurologicalDeficits.delegate = self
-        managementPlanView.delegate = self
-        signature.delegate = self
-        residentNameView.delegate = self
-        otherRelevantInfoView.delegate = self
     }
     
     func setUpPickers() {
@@ -369,7 +370,6 @@ class PatientInformationViewController: UITableViewController, DrawViewDelegate,
         //Clinical Impressions
         setButton(changesInGCSYes)
         setButton(changesInGCSNo)
-        setButton(writeCTScan)
         
         //Follow Up OPD
         
@@ -377,8 +377,44 @@ class PatientInformationViewController: UITableViewController, DrawViewDelegate,
         setButton(followUpWed)
         setButton(followUpFri)
         
+        //Button for the drawViews
+        setViewButton(writeCTScan)
+        setViewButton(writeNeurologicalDefects)
+        setViewButton(writeOtherRelevantInfo)
+        setViewButton(writeManagementPlan)
+        setViewButton(writeSignature)
+        setViewButton(writeNameOfResident)
+        setViewButton(writeCourse)
+        setViewButton(conditionAtDIscharge)
+        setViewButton(finalManagementPlan)
+        setViewButton(finalSignature)
+        setViewButton(finalName)
+
+        
     }
     
+    private func setViewButton(sender: UIButton) {
+        sender.addTarget(self, action: "onWriteButtonClick:", forControlEvents: .TouchUpInside)
+        sender.setImage(UIImage(named: "tick"), forState: UIControlState.Selected);
+        sender.setImage(UIImage(named: "edit"), forState: UIControlState.Normal);
+    }
+    
+    func onWriteButtonClick(sender: UIButton) {
+        sender.selected = !sender.selected
+        if sender.selected {
+            numberOfClicks++
+        }
+        else {
+            numberOfClicks--
+        }
+        
+        if numberOfClicks == 0 {
+            self.tableView.scrollEnabled = true
+        }
+        else {
+            self.tableView.scrollEnabled = false
+        }
+    }
     
     func onButtonClick(sender: UIButton) {
         sender.selected = !sender.selected
@@ -1062,6 +1098,8 @@ class PatientInformationViewController: UITableViewController, DrawViewDelegate,
     
     func displayPatientInformation() {
         shouldDisplayPatientInfo = false
+        saveButton.enabled = false
+        saveButton.tintColor = UIColor.clearColor()
         
         patientName.text = selectedPatient?.name
         patientAge.text = selectedPatient?.age
@@ -1383,15 +1421,7 @@ class PatientInformationViewController: UITableViewController, DrawViewDelegate,
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
-    //MARK: Drawview delegate methods
-    
-    func startedDrawing() {
-        self.tableView.scrollEnabled = false
-    }
-    
-    func stoppedDrawing() {
-        self.tableView.scrollEnabled = true
-    }
+    //MARK: Drawview delegate method
     
     //TableView method
     
@@ -1411,7 +1441,7 @@ class PatientInformationViewController: UITableViewController, DrawViewDelegate,
     }
     
     override func scrollViewDidScroll(scrollView: UIScrollView) {
-        //self.view.endEditing(true)
+        self.view.endEditing(true)
     }
     
     

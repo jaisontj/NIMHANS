@@ -51,7 +51,7 @@ class CreateNewUserViewController: UIViewController {
     
     private func showAlert(message: String,doneCreatingNewUser: Bool) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        let dismiss = UIAlertAction(title: message, style: UIAlertActionStyle.Cancel) { (action) -> Void in
+        let dismiss = UIAlertAction(title: "dismiss", style: UIAlertActionStyle.Cancel) { (action) -> Void in
             if doneCreatingNewUser {
                 self.dismissViewControllerAnimated(true, completion: nil)
             }

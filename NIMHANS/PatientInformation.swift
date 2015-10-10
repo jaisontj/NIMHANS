@@ -160,7 +160,12 @@ class PatientInformation {
         self.timeOfInjury = data.timeOfInjury
         self.dateOfExamination = data.dateOfExamination
         self.dateOfInjury = data.dateOfInjury
+        self.isHearsay = checkBool(data.isHearsay)
+        self.wasEyewithnessPresent = checkBool(data.isEyewitness)
     
+        self.ns1Monday = checkBool(data.nsMon)
+        self.ns2Wednesday = checkBool(data.nsWed)
+        self.ns3Friday = checkBool(data.nsFri)
         self.isRTA = checkBool(data.isRTA)
         self.isFall = checkBool(data.isFall)
         self.isOther = checkBool(data.isOther)

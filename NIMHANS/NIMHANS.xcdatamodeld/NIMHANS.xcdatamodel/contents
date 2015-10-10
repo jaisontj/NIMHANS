@@ -5,59 +5,109 @@
         <attribute name="endY" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="startX" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="startY" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="finalNamePatients" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PatientDetails" inverseName="finalName" inverseEntity="PatientDetails" syncable="YES"/>
+        <relationship name="finalSignaturePatients" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PatientDetails" inverseName="finalSignature" inverseEntity="PatientDetails" syncable="YES"/>
+        <relationship name="patientConditionAtDischarge" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PatientDetails" inverseName="conditionAtDischarge" inverseEntity="PatientDetails" syncable="YES"/>
+        <relationship name="patientHospitalCourse" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PatientDetails" inverseName="hospitalCourse" inverseEntity="PatientDetails" syncable="YES"/>
+        <relationship name="patientOtherInfo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PatientDetails" inverseName="otherRelevantInfo" inverseEntity="PatientDetails" syncable="YES"/>
+        <relationship name="patientResidentName" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PatientDetails" inverseName="residentName" inverseEntity="PatientDetails" syncable="YES"/>
         <relationship name="patientsCTScanPoints" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PatientDetails" inverseName="ctScanPoints" inverseEntity="PatientDetails" syncable="YES"/>
+        <relationship name="patientSignature" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PatientDetails" inverseName="signature" inverseEntity="PatientDetails" syncable="YES"/>
+        <relationship name="patientsManagementPlan" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PatientDetails" inverseName="managementPlan" inverseEntity="PatientDetails" syncable="YES"/>
+        <relationship name="patientsNeurologicalDeficits" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PatientDetails" inverseName="neurologicalDefectsPoints" inverseEntity="PatientDetails" syncable="YES"/>
+        <relationship name="patientTreatment" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PatientDetails" inverseName="treatmentPoints" inverseEntity="PatientDetails" syncable="YES"/>
     </entity>
     <entity name="PatientDetails" representedClassName="PatientDetails" syncable="YES">
         <attribute name="abdominalInjury" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="activePeripheralBleeding" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="age" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="airway" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="alcohol" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="amnesia" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="bleedingFromEar" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="bleedingFromNose" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="bpAfterHalfHour" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="bpOnArrival" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="carotidPulsations" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="changesInGCS" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="chestInjury" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="clearAirway" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="csf" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="ctScanHour" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dateOfExamination" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="dateOfInjury" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="didLoseConsciousness" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="didLucidDream" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="eoScoreAfter" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="eoScoreInitial" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="finalDate" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="finalTime" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="followUpFri" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="followUpMon" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="followUpWed" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="fractures" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="gaspingRespiration" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="gcsChangeNo" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="gcsChangeYes" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="gender" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="helmet" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="horLeft" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="horRight" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="informantName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="intubationAirway" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="isAlcoholNo" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="isAlcoholYes" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="isAssault" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="isDriver" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="isEyewitness" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="isFall" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="isHearsay" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="isHelmetNo" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="isHelmetYes" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="isOther" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="isPassenger" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="isPedestrian" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="isRTA" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="leftCarotidPulsation" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="mrScoreAfter" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mrScoreInitial" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mseLowerLeftPower" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mseLowerLeftTone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mseLowerRightPower" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mseLowerRightTone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mseUpperLeftPower" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mseUpperLeftTone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mseUpperRightPower" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mseUpperRightTone" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="normalRespiration" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="nsFri" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="nsMon" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="nsWed" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="otorrhoea" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="peripheralPulses" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="placeOfInjury" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="plrLeft" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="plrLeftmm" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="plrRight" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="plrRightmm" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pulseRatePerMin" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="referredFrom" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="respiration" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="siezures" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="spineDeformity" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="spineTenderness" optional="YES" attributeType="Boolean" syncable="YES"/>
-        <attribute name="tachypnoenicRespiration" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="timeOfExamination" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timeOfInjury" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="totalAfter" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="totalInitial" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="vomiting" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="vrScoreAfter" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vrScoreInitial" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="wounds" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="conditionAtDischarge" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LinePoints" inverseName="patientConditionAtDischarge" inverseEntity="LinePoints" syncable="YES"/>
         <relationship name="ctScanPoints" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LinePoints" inverseName="patientsCTScanPoints" inverseEntity="LinePoints" syncable="YES"/>
         <relationship name="doctorDetails" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserDetails" inverseName="patientInformation" inverseEntity="UserDetails" syncable="YES"/>
+        <relationship name="finalName" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LinePoints" inverseName="finalNamePatients" inverseEntity="LinePoints" syncable="YES"/>
+        <relationship name="finalSignature" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LinePoints" inverseName="finalSignaturePatients" inverseEntity="LinePoints" syncable="YES"/>
+        <relationship name="hospitalCourse" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LinePoints" inverseName="patientHospitalCourse" inverseEntity="LinePoints" syncable="YES"/>
+        <relationship name="managementPlan" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LinePoints" inverseName="patientsManagementPlan" inverseEntity="LinePoints" syncable="YES"/>
+        <relationship name="neurologicalDefectsPoints" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LinePoints" inverseName="patientsNeurologicalDeficits" inverseEntity="LinePoints" syncable="YES"/>
+        <relationship name="otherRelevantInfo" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LinePoints" inverseName="patientOtherInfo" inverseEntity="LinePoints" syncable="YES"/>
+        <relationship name="residentName" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LinePoints" inverseName="patientResidentName" inverseEntity="LinePoints" syncable="YES"/>
+        <relationship name="signature" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LinePoints" inverseName="patientSignature" inverseEntity="LinePoints" syncable="YES"/>
+        <relationship name="treatmentPoints" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LinePoints" inverseName="patientTreatment" inverseEntity="LinePoints" syncable="YES"/>
     </entity>
     <entity name="UserDetails" representedClassName="UserDetails" syncable="YES">
         <attribute name="userName" optional="YES" attributeType="String" syncable="YES"/>
@@ -65,8 +115,8 @@
         <relationship name="patientInformation" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PatientDetails" inverseName="doctorDetails" inverseEntity="PatientDetails" syncable="YES"/>
     </entity>
     <elements>
-        <element name="PatientDetails" positionX="-45" positionY="18" width="128" height="795"/>
+        <element name="LinePoints" positionX="-135" positionY="171" width="128" height="270"/>
+        <element name="PatientDetails" positionX="-45" positionY="18" width="128" height="1395"/>
         <element name="UserDetails" positionX="-263" positionY="-0" width="128" height="88"/>
-        <element name="LinePoints" positionX="-135" positionY="171" width="128" height="120"/>
     </elements>
 </model>

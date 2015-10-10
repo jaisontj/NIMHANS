@@ -11,8 +11,7 @@ import Foundation
 import CoreData
 
 class PatientInformationViewController: UITableViewController, DrawViewDelegate,UITextFieldDelegate {
-
-    @IBOutlet weak var navBarTitle: UINavigationItem!
+    
     
     //Patient details
     
@@ -27,6 +26,11 @@ class PatientInformationViewController: UITableViewController, DrawViewDelegate,
     @IBOutlet weak var wasEyewithnessPresent: UIButton!
     @IBOutlet weak var isHearsay: UIButton!
     
+    
+    @IBOutlet weak var timeOfInjury: UITextField!
+    @IBOutlet weak var timeOfExamination: UITextField!
+    @IBOutlet weak var dateOfInjury: UITextField!
+    @IBOutlet weak var dateOfExamination: UITextField!
     //OPD
     
     @IBOutlet weak var ns1Monday: UIButton!
@@ -176,8 +180,9 @@ class PatientInformationViewController: UITableViewController, DrawViewDelegate,
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpButtons()
+        setUpPickers()
         setDelegates()
-        
+                
         if shouldDisplayPatientInfo {
             displayPatientInformation()
         }
@@ -192,6 +197,96 @@ class PatientInformationViewController: UITableViewController, DrawViewDelegate,
         otherRelevantInfoView.delegate = self
     }
     
+    func setUpPickers() {
+        setDateTextField(dateOfExamination)
+        setDateTextField(dateOfInjury)
+        setDateTextField(finalDate)
+        
+        setTimeTextField(timeOfExamination)
+        setTimeTextField(timeOfInjury)
+        setTimeTextField(finalTime)
+    }
+    
+    private func setDateTextField(sender: UITextField) {
+        sender.addTarget(self, action: "onDateTextFieldSelected:", forControlEvents: UIControlEvents.EditingDidBegin)
+    }
+    
+    private func setTimeTextField(sender: UITextField) {
+        sender.addTarget(self, action: "onTimeTextFieldSelected:", forControlEvents: UIControlEvents.EditingDidBegin)
+    }
+    
+    func onDateTextFieldSelected(sender: UITextField) {
+        let datePickerView:UIDatePicker = UIDatePicker()
+        datePickerView.datePickerMode = UIDatePickerMode.Date
+        sender.inputView = datePickerView
+        datePickerView.addTarget(self, action: "datePickerValueChanged:", forControlEvents: UIControlEvents.ValueChanged)
+        setDate(sender, picker: datePickerView)
+        addCloseButtonToPicker(sender)
+    }
+    
+    func onTimeTextFieldSelected(sender: UITextField) {
+        let datePickerView:UIDatePicker = UIDatePicker()
+        datePickerView.datePickerMode = UIDatePickerMode.Time
+        sender.inputView = datePickerView
+        datePickerView.addTarget(self, action: "timePickerValueChanged:", forControlEvents: UIControlEvents.ValueChanged)
+        setTime(sender, picker: datePickerView)
+        addCloseButtonToPicker(sender)
+    }
+    
+    func addCloseButtonToPicker(sender: UITextField) {
+        let toolBar = UIToolbar(frame: CGRectMake(0, 0, 0, 40))
+        toolBar.barStyle = UIBarStyle.Default
+        toolBar.tintColor = UIColor.blackColor()
+        toolBar.backgroundColor = UIColor.greenColor()
+        let toolBarButton = UIBarButtonItem(title: "Close picker", style: UIBarButtonItemStyle.Done, target: self, action: "closeButtonPressed:")
+        toolBar.items = [toolBarButton]
+        sender.inputAccessoryView = toolBar
+    }
+    
+    func closeButtonPressed(sender: UIBarButtonItem) {
+        self.view.endEditing(true)
+    }
+    
+    func datePickerValueChanged(sender:UIDatePicker) {
+        if finalDate.isFirstResponder() {
+            setDate(finalDate, picker: sender)
+        }
+        if dateOfInjury.isFirstResponder() {
+            setDate(dateOfInjury, picker: sender)
+        }
+        if dateOfExamination.isFirstResponder(){
+            setDate(dateOfExamination, picker: sender)
+        }
+    }
+    
+    func timePickerValueChanged(sender:UIDatePicker) {
+        if finalTime.isFirstResponder() {
+            setTime(finalTime, picker: sender)
+        }
+        if timeOfInjury.isFirstResponder() {
+            setTime(timeOfInjury, picker: sender)
+        }
+        if timeOfExamination.isFirstResponder(){
+            setTime(timeOfExamination, picker: sender)
+        }
+    }
+    
+    func setDate(sender: UITextField,picker: UIDatePicker) {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+        dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
+        
+        sender.text = dateFormatter.stringFromDate(picker.date)
+    }
+    
+    func setTime(sender: UITextField,picker: UIDatePicker) {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = NSDateFormatterStyle.NoStyle
+        dateFormatter.timeStyle = NSDateFormatterStyle.MediumStyle
+        
+        sender.text = dateFormatter.stringFromDate(picker.date)
+    }
+    
     func setUpButtons() {
         
         setButton(isPatientMale)
@@ -199,7 +294,6 @@ class PatientInformationViewController: UITableViewController, DrawViewDelegate,
         setButton(isPatientOther)
         setButton(wasEyewithnessPresent)
         setButton(isHearsay)
-        
         
         setButton(isRTA)
         setButton(isFall)
@@ -294,13 +388,6 @@ class PatientInformationViewController: UITableViewController, DrawViewDelegate,
         sender.addTarget(self, action: "onButtonClick:", forControlEvents: .TouchUpInside)
         sender.setImage(UIImage(named: "checked_checkbox"), forState: UIControlState.Selected);
         sender.setImage(UIImage(named: "unchecked_checkbox"), forState: UIControlState.Normal);
-    }
-    
-    @IBAction func dateOfExamination(sender: UIDatePicker) {
-        
-    }
-    @IBAction func dateOfInjury(sender: UIDatePicker) {
-        
     }
     
     func save() {
@@ -462,12 +549,9 @@ class PatientInformationViewController: UITableViewController, DrawViewDelegate,
                 
                 let line = Line(start: start, end: end)
                 ctScanDrawView.lines.append(line)
-
             }
         }
-        
         ctScanDrawView.setDisplay()
-        
     }
     
     private func checkBool(value: Bool?) -> Bool {
@@ -476,6 +560,8 @@ class PatientInformationViewController: UITableViewController, DrawViewDelegate,
         }
         return false
     }
+    
+    
     
     @IBAction func doneButtonClicked(sender: UIBarButtonItem) {
         save()
@@ -503,6 +589,14 @@ class PatientInformationViewController: UITableViewController, DrawViewDelegate,
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    override func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return false
+    }
+    
+    override func scrollViewDidScroll(scrollView: UIScrollView) {
+        //self.view.endEditing(true)
     }
     
     

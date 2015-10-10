@@ -102,4 +102,10 @@ class PatientDetails: NSManagedObject {
     @NSManaged var treatmentPoints: NSSet?
     @NSManaged var finalSignature: NSSet?
     @NSManaged var finalName: NSSet?
+    
+    
+    
+    public func addPoints(point: LinePoints,keyValue: String) {
+        self.mutableSetValueForKey(keyValue).addObject(point)
+    }
 }

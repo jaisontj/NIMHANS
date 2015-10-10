@@ -354,6 +354,20 @@ class PatientInformationViewController: UITableViewController, DrawViewDelegate,
                 patientEntry.gender = patient.gender
                 patientEntry.isRTA = patient.isRTA
                 
+                for ctScanPoint in patient.ctScanPoints {
+                    let ctScanPointEntry =
+                    NSEntityDescription.insertNewObjectForEntityForName("LinePoints", inManagedObjectContext: managedContext) as! LinePoints
+                    
+                    ctScanPointEntry.startX = ctScanPoint.startX
+                    ctScanPointEntry.startY = ctScanPoint.startY
+                    ctScanPointEntry.endX = ctScanPoint.endX
+                    ctScanPointEntry.endY = ctScanPoint.endY
+                    
+                    patientEntry.addCTScanPoints(ctScanPointEntry)
+
+                }
+                
+                
                 newUserEntry.addPatients(patientEntry)
             }
         }
@@ -387,6 +401,18 @@ class PatientInformationViewController: UITableViewController, DrawViewDelegate,
         }
         if isOther.selected {
             patientEntry.isOther = true
+        }
+        
+        for ctScanPoint in ctScanDrawView.lines {
+            let ctScanPointEntry =
+            NSEntityDescription.insertNewObjectForEntityForName("LinePoints", inManagedObjectContext: managedContext) as! LinePoints
+            
+            ctScanPointEntry.startX = Float(ctScanPoint.start.x)
+            ctScanPointEntry.startY = Float(ctScanPoint.start.y)
+            ctScanPointEntry.endX = Float(ctScanPoint.end.x)
+            ctScanPointEntry.endY = Float(ctScanPoint.end.y)
+            
+            patientEntry.addCTScanPoints(ctScanPointEntry)
         }
         
         newUserEntry.addPatients(patientEntry)
@@ -424,6 +450,23 @@ class PatientInformationViewController: UITableViewController, DrawViewDelegate,
         isAssault.selected = checkBool(selectedPatient?.isAssault)
         isFall.selected = checkBool(selectedPatient?.isFall)
         isOther.selected = checkBool(selectedPatient?.isOther)
+        
+        if let ctScanPoints = selectedPatient?.ctScanPoints {
+            for ctScanPoint in ctScanPoints {
+                var start = CGPoint()
+                start.x = CGFloat(ctScanPoint.startX!)
+                start.y = CGFloat(ctScanPoint.startY!)
+                var end = CGPoint()
+                end.x = CGFloat(ctScanPoint.endX!)
+                end.y = CGFloat(ctScanPoint.endY!)
+                
+                let line = Line(start: start, end: end)
+                ctScanDrawView.lines.append(line)
+
+            }
+        }
+        
+        ctScanDrawView.setDisplay()
         
     }
     

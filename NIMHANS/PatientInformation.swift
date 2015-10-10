@@ -20,6 +20,8 @@ class PatientInformation {
     var isOther: Bool?
     var isAssault: Bool?
     
+    var ctScanPoints = [Points]()
+    
     var doctorDetails: UserDetails?
     
     init(data: PatientDetails) {
@@ -34,6 +36,16 @@ class PatientInformation {
         self.isFall = checkBool(data.isFall)
         self.isOther = checkBool(data.isOther)
         self.isAssault = checkBool(data.isAssault)
+        
+        
+        
+        if let allCTScanPoints = data.ctScanPoints?.allObjects as? [LinePoints] {
+            for ctScanPoint in allCTScanPoints {
+                let val = Points(data: ctScanPoint)
+                ctScanPoints.append(val)
+            }
+            
+        }
     }
     
     private func checkBool(value: NSNumber?) -> Bool {

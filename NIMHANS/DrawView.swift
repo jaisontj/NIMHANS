@@ -69,5 +69,9 @@ class DrawView: UIView {
         CGContextStrokePath(context)
     }
     
+    func setDisplay() {
+        setNeedsDisplay()
+    }
+    
 
 }

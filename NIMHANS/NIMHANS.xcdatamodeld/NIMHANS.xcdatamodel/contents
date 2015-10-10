@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8118.17" systemVersion="14F27" minimumToolsVersion="Automatic">
+    <entity name="LinePoints" representedClassName="LinePoints" syncable="YES">
+        <attribute name="endX" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="endY" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="startX" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="startY" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="patientsCTScanPoints" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PatientDetails" inverseName="ctScanPoints" inverseEntity="PatientDetails" syncable="YES"/>
+    </entity>
     <entity name="PatientDetails" representedClassName="PatientDetails" syncable="YES">
         <attribute name="abdominalInjury" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="activePeripheralBleeding" optional="YES" attributeType="Boolean" syncable="YES"/>
@@ -49,6 +56,7 @@
         <attribute name="tachypnoenicRespiration" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="vomiting" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="wounds" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <relationship name="ctScanPoints" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="LinePoints" inverseName="patientsCTScanPoints" inverseEntity="LinePoints" syncable="YES"/>
         <relationship name="doctorDetails" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserDetails" inverseName="patientInformation" inverseEntity="UserDetails" syncable="YES"/>
     </entity>
     <entity name="UserDetails" representedClassName="UserDetails" syncable="YES">
@@ -57,7 +65,8 @@
         <relationship name="patientInformation" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PatientDetails" inverseName="doctorDetails" inverseEntity="PatientDetails" syncable="YES"/>
     </entity>
     <elements>
-        <element name="PatientDetails" positionX="-45" positionY="18" width="128" height="780"/>
+        <element name="PatientDetails" positionX="-45" positionY="18" width="128" height="795"/>
         <element name="UserDetails" positionX="-263" positionY="-0" width="128" height="88"/>
+        <element name="LinePoints" positionX="-135" positionY="171" width="128" height="120"/>
     </elements>
 </model>

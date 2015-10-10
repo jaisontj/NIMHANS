@@ -25,7 +25,9 @@
 		DAD5C0A91BC795BA00C97185 /* PatientInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5C0A81BC795BA00C97185 /* PatientInformationViewController.swift */; };
 		DAD5C0AB1BC7BAA300C97185 /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5C0AA1BC7BAA300C97185 /* DrawView.swift */; };
 		DAD5C0AD1BC7BB6500C97185 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5C0AC1BC7BB6500C97185 /* Line.swift */; };
-		DAE952F71BC84A4400FA8E8A /* PatientDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAE952F51BC84A4400FA8E8A /* PatientDetails.swift */; };
+		DAF128571BC917C300362009 /* PatientDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF128551BC917C300362009 /* PatientDetails.swift */; };
+		DAF1285B1BC917C400362009 /* LinePoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF128591BC917C400362009 /* LinePoints.swift */; };
+		DAF1285D1BC917F500362009 /* Points.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAF1285C1BC917F500362009 /* Points.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,7 +72,9 @@
 		DAD5C0A81BC795BA00C97185 /* PatientInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientInformationViewController.swift; sourceTree = "<group>"; };
 		DAD5C0AA1BC7BAA300C97185 /* DrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
 		DAD5C0AC1BC7BB6500C97185 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
-		DAE952F51BC84A4400FA8E8A /* PatientDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientDetails.swift; sourceTree = "<group>"; };
+		DAF128551BC917C300362009 /* PatientDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientDetails.swift; sourceTree = "<group>"; };
+		DAF128591BC917C400362009 /* LinePoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LinePoints.swift; sourceTree = "<group>"; };
+		DAF1285C1BC917F500362009 /* Points.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Points.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,16 +136,15 @@
 		DA741F991BC3F0480000E9D8 /* NIMHANS */ = {
 			isa = PBXGroup;
 			children = (
+				DAD1154B1BC8D2B000897CF5 /* Global Functions.swift */,
 				DACB087B1BC58A2600CCDED6 /* Data Model */,
 				DA741FCB1BC3F6890000E9D8 /* LogInViewController.swift */,
-				DAD1154B1BC8D2B000897CF5 /* Global Functions.swift */,
 				DACB08811BC593CC00CCDED6 /* CreateNewUserViewController.swift */,
 				DACB08831BC5A5ED00CCDED6 /* PatientListViewController.swift */,
 				DAD5C0A81BC795BA00C97185 /* PatientInformationViewController.swift */,
 				DAD5C0AA1BC7BAA300C97185 /* DrawView.swift */,
 				DAD5C0AC1BC7BB6500C97185 /* Line.swift */,
 				DA741F9E1BC3F0480000E9D8 /* Main.storyboard */,
-				DA741FA11BC3F0480000E9D8 /* NIMHANS.xcdatamodeld */,
 				DAD5C0B61BC7CD4C00C97185 /* Supporting Files */,
 			);
 			path = NIMHANS;
@@ -168,9 +171,11 @@
 		DACB087B1BC58A2600CCDED6 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
+				DA741FA11BC3F0480000E9D8 /* NIMHANS.xcdatamodeld */,
 				DACB087C1BC58D0900CCDED6 /* CoreData */,
 				DACB087D1BC58D3300CCDED6 /* UserInformation.swift */,
 				DACB087F1BC58D3D00CCDED6 /* PatientInformation.swift */,
+				DAF1285C1BC917F500362009 /* Points.swift */,
 			);
 			name = "Data Model";
 			sourceTree = "<group>";
@@ -179,7 +184,8 @@
 			isa = PBXGroup;
 			children = (
 				DACB08741BC5892D00CCDED6 /* UserDetails.swift */,
-				DAE952F51BC84A4400FA8E8A /* PatientDetails.swift */,
+				DAF128591BC917C400362009 /* LinePoints.swift */,
+				DAF128551BC917C300362009 /* PatientDetails.swift */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -333,6 +339,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAF1285B1BC917C400362009 /* LinePoints.swift in Sources */,
 				DACB08821BC593CC00CCDED6 /* CreateNewUserViewController.swift in Sources */,
 				DA741FA31BC3F0480000E9D8 /* NIMHANS.xcdatamodeld in Sources */,
 				DAD5C0A91BC795BA00C97185 /* PatientInformationViewController.swift in Sources */,
@@ -342,10 +349,11 @@
 				DA741F9B1BC3F0480000E9D8 /* AppDelegate.swift in Sources */,
 				DACB08801BC58D3D00CCDED6 /* PatientInformation.swift in Sources */,
 				DAD5C0AB1BC7BAA300C97185 /* DrawView.swift in Sources */,
+				DAF128571BC917C300362009 /* PatientDetails.swift in Sources */,
 				DA741FCC1BC3F6890000E9D8 /* LogInViewController.swift in Sources */,
 				DACB08761BC5892D00CCDED6 /* UserDetails.swift in Sources */,
+				DAF1285D1BC917F500362009 /* Points.swift in Sources */,
 				DACB08841BC5A5ED00CCDED6 /* PatientListViewController.swift in Sources */,
-				DAE952F71BC84A4400FA8E8A /* PatientDetails.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

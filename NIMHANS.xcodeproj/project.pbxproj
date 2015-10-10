@@ -21,6 +21,7 @@
 		DACB08801BC58D3D00CCDED6 /* PatientInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACB087F1BC58D3D00CCDED6 /* PatientInformation.swift */; };
 		DACB08821BC593CC00CCDED6 /* CreateNewUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACB08811BC593CC00CCDED6 /* CreateNewUserViewController.swift */; };
 		DACB08841BC5A5ED00CCDED6 /* PatientListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DACB08831BC5A5ED00CCDED6 /* PatientListViewController.swift */; };
+		DAD1154C1BC8D2B000897CF5 /* Global Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD1154B1BC8D2B000897CF5 /* Global Functions.swift */; };
 		DAD5C0A91BC795BA00C97185 /* PatientInformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5C0A81BC795BA00C97185 /* PatientInformationViewController.swift */; };
 		DAD5C0AB1BC7BAA300C97185 /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5C0AA1BC7BAA300C97185 /* DrawView.swift */; };
 		DAD5C0AD1BC7BB6500C97185 /* Line.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAD5C0AC1BC7BB6500C97185 /* Line.swift */; };
@@ -65,6 +66,7 @@
 		DACB087F1BC58D3D00CCDED6 /* PatientInformation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientInformation.swift; sourceTree = "<group>"; };
 		DACB08811BC593CC00CCDED6 /* CreateNewUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewUserViewController.swift; sourceTree = "<group>"; };
 		DACB08831BC5A5ED00CCDED6 /* PatientListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientListViewController.swift; sourceTree = "<group>"; };
+		DAD1154B1BC8D2B000897CF5 /* Global Functions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Global Functions.swift"; sourceTree = "<group>"; };
 		DAD5C0A81BC795BA00C97185 /* PatientInformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatientInformationViewController.swift; sourceTree = "<group>"; };
 		DAD5C0AA1BC7BAA300C97185 /* DrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
 		DAD5C0AC1BC7BB6500C97185 /* Line.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Line.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			children = (
 				DACB087B1BC58A2600CCDED6 /* Data Model */,
 				DA741FCB1BC3F6890000E9D8 /* LogInViewController.swift */,
+				DAD1154B1BC8D2B000897CF5 /* Global Functions.swift */,
 				DACB08811BC593CC00CCDED6 /* CreateNewUserViewController.swift */,
 				DACB08831BC5A5ED00CCDED6 /* PatientListViewController.swift */,
 				DAD5C0A81BC795BA00C97185 /* PatientInformationViewController.swift */,
@@ -333,6 +336,7 @@
 				DACB08821BC593CC00CCDED6 /* CreateNewUserViewController.swift in Sources */,
 				DA741FA31BC3F0480000E9D8 /* NIMHANS.xcdatamodeld in Sources */,
 				DAD5C0A91BC795BA00C97185 /* PatientInformationViewController.swift in Sources */,
+				DAD1154C1BC8D2B000897CF5 /* Global Functions.swift in Sources */,
 				DACB087E1BC58D3300CCDED6 /* UserInformation.swift in Sources */,
 				DAD5C0AD1BC7BB6500C97185 /* Line.swift in Sources */,
 				DA741F9B1BC3F0480000E9D8 /* AppDelegate.swift in Sources */,

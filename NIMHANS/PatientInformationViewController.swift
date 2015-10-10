@@ -20,15 +20,17 @@ class PatientInformationViewController: UITableViewController, DrawViewDelegate,
     @IBOutlet weak var patientAge: UITextField!
     @IBOutlet weak var patientReferredFrom: UITextField!
     @IBOutlet weak var placeOfInjury: UITextField!
-    
-
+    @IBOutlet weak var informantsName: UITextField!
     @IBOutlet weak var isPatientMale: UIButton!
     @IBOutlet weak var isPatientFemale: UIButton!
     @IBOutlet weak var isPatientOther: UIButton!
-    
     @IBOutlet weak var wasEyewithnessPresent: UIButton!
     @IBOutlet weak var isHearsay: UIButton!
     
+    //OPD
+    
+    @IBOutlet weak var ns1Monday: UIButton!
+    @IBOutlet weak var ns2Wednesday: UIButton!
     
     //History of injury in detail
     
@@ -111,6 +113,10 @@ class PatientInformationViewController: UITableViewController, DrawViewDelegate,
         super.viewDidLoad()
         setUpButtons()
         setDelegates()
+        
+        if shouldDisplayPatientInfo {
+            displayPatientInformation()
+        }
     }
     
     func setDelegates() {
@@ -285,6 +291,7 @@ class PatientInformationViewController: UITableViewController, DrawViewDelegate,
         
         do {
             try managedContext.save()
+            didAddNewPatient = true
         }
         catch {
             let nserror = error as NSError
@@ -293,8 +300,41 @@ class PatientInformationViewController: UITableViewController, DrawViewDelegate,
         
     }
     
+    func displayPatientInformation() {
+        shouldDisplayPatientInfo = false
+        
+        patientName.text = selectedPatient?.name
+        patientAge.text = selectedPatient?.age
+        patientReferredFrom.text = selectedPatient?.referredFrom
+        placeOfInjury.text = selectedPatient?.placeOfInjury
+        
+        if selectedPatient?.gender == "male" {
+            isPatientMale.selected = true
+        }
+        if selectedPatient?.gender == "female" {
+            isPatientFemale.selected = true
+        }
+        if selectedPatient?.gender == "other" {
+            isPatientOther.selected = true
+        }
+        
+        isRTA.selected = checkBool(selectedPatient?.isRTA)
+        isAssault.selected = checkBool(selectedPatient?.isAssault)
+        isFall.selected = checkBool(selectedPatient?.isFall)
+        isOther.selected = checkBool(selectedPatient?.isOther)
+        
+    }
+    
+    private func checkBool(value: Bool?) -> Bool {
+        if let val = value {
+            return val
+        }
+        return false
+    }
+    
     @IBAction func doneButtonClicked(sender: UIBarButtonItem) {
         save()
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     //MARK: Drawview delegate methods

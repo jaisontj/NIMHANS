@@ -12,10 +12,12 @@ import CoreData
 @objc(PatientDetails)
 class PatientDetails: NSManagedObject {
 
+    @NSManaged var name: String?
     @NSManaged var age: String?
+    @NSManaged var gender: String?
+
     @NSManaged var didLoseConsciousness: NSNumber?
     @NSManaged var didLucidDream: NSNumber?
-    @NSManaged var gender: String?
     @NSManaged var informantName: String?
     @NSManaged var isAlcoholNo: NSNumber?
     @NSManaged var isAlcoholYes: NSNumber?
@@ -30,7 +32,6 @@ class PatientDetails: NSManagedObject {
     @NSManaged var isPassenger: NSNumber?
     @NSManaged var isPedestrian: NSNumber?
     @NSManaged var isRTA: NSNumber?
-    @NSManaged var name: String?
     @NSManaged var placeOfInjury: String?
     @NSManaged var referredFrom: String?
     @NSManaged var siezures: NSNumber?

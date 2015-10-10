@@ -30,7 +30,6 @@ class DrawView: UIView {
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         if let delegate = self.delegate {
             delegate.startedDrawing()
-            self.backgroundColor = UIColor.lightGrayColor()
         }
         if let touch = touches.first {
             lastPoint = touch.locationInView(self)
@@ -39,6 +38,9 @@ class DrawView: UIView {
     }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if let delegate = self.delegate {
+            delegate.startedDrawing()
+        }
         if let touch = touches.first  {
             let newPoint = touch.locationInView(self)
             lines.append(Line(start: lastPoint, end: newPoint))
@@ -51,7 +53,6 @@ class DrawView: UIView {
     override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         if let delegate = self.delegate {
             delegate.stoppedDrawing()
-            self.backgroundColor = UIColor.lightGrayColor()
         }
     }
     
@@ -64,7 +65,7 @@ class DrawView: UIView {
         }
         CGContextSetLineCap(context, kCGLineCapRound)
         CGContextSetRGBStrokeColor(context, 0, 0, 0, 1)
-        CGContextSetLineWidth(context, 5)
+        CGContextSetLineWidth(context, 2)
         CGContextStrokePath(context)
     }
     

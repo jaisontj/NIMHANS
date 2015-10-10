@@ -23,8 +23,7 @@ class CreateNewUserViewController: UIViewController {
     
     @IBAction func createNewUser(sender: UIButton) {
         if firstName.text == "" || userName.text == "" || password.text == "" || confirmPassword.text == "" {
-            print("field empty")
-            showAlert("No fields can be left empty")
+            showAlert("No fields can be left empty",doneCreatingNewUser: false)
         }
         else {
             addUserToDB()
@@ -50,10 +49,12 @@ class CreateNewUserViewController: UIViewController {
         firstName.resignFirstResponder()
     }
     
-    private func showAlert(message: String) {
+    private func showAlert(message: String,doneCreatingNewUser: Bool) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
         let dismiss = UIAlertAction(title: message, style: UIAlertActionStyle.Cancel) { (action) -> Void in
-            self.dismissViewControllerAnimated(true, completion: nil)
+            if doneCreatingNewUser {
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }
         }
         alert.addAction(dismiss)
         self.presentViewController(alert, animated: true, completion: nil)
@@ -72,7 +73,7 @@ class CreateNewUserViewController: UIViewController {
         newUserEntry.patientInformation = nil
         do {
             try managedContext.save()
-            showAlert(firstName.text! + " your account has been successfully created")
+            showAlert(firstName.text! + " your account has been successfully created",doneCreatingNewUser: true)
         }
         catch {
             let nserror = error as NSError

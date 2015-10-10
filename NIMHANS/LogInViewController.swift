@@ -10,8 +10,7 @@ import UIKit
 import CoreData
 import LocalAuthentication
 
-var currentUser: UserInformation?
-var currentUserData: UserDetails?
+
 
 class LogInViewController: UIViewController,UITextFieldDelegate {
 
@@ -51,54 +50,14 @@ class LogInViewController: UIViewController,UITextFieldDelegate {
                         self.authenticateUserWithBiometrics()
                     }
                     else {
-                        self.showAlert("Password is Incorrect")
+                        invokeAlertMethod("Incorrect password", msgBody: "Please re-enter your password,correctly", delegate: self)
                     }
                 }
                 else {
-                    self.showAlert("Unregistered User")
+                    invokeAlertMethod("Unregistered User", msgBody: "Please check your username or create a new account ", delegate: self)
                 }
             })
         }
-    }
-    
-    private func fetchDataForUserName(name: String,callback: (Bool) -> Void) {
-        var userFound = false
-        let appDelegate =
-        UIApplication.sharedApplication().delegate as! AppDelegate
-        let managedContext = appDelegate.managedObjectContext
-        let fetchRequest = NSFetchRequest(entityName:"UserDetails")
-        
-        do {
-            let fetchedResults = try managedContext.executeFetchRequest(fetchRequest) as? [UserDetails]
-            if let users = fetchedResults {
-                for user in users {
-                    let data = UserInformation(data: user)
-                    if name == data.userName {
-                        currentUser = data
-                        currentUserData = user
-                        print("count:"+(currentUser?.patientDetails.count)!)
-                        userFound = true
-                        callback(true)
-                        break
-                    }
-                }
-            }
-            else {
-            }
-            
-        }
-        catch {
-        }
-        if !userFound {
-            callback(false)
-        }
-    }
-    
-    private func showAlert(message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-        let tryAgainAction = UIAlertAction(title: "Dismiss", style: UIAlertActionStyle.Cancel, handler: nil)
-        alert.addAction(tryAgainAction)
-        self.presentViewController(alert, animated: true, completion: nil)
     }
     
     func authenticateUserWithBiometrics() {

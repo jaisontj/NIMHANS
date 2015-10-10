@@ -23,8 +23,17 @@ class PatientListViewController: UIViewController,UITableViewDelegate,UITableVie
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(true)
-        tableView.reloadData()
-    }
+        if didAddNewPatient {
+            if let username = currentUser?.userName {
+                fetchDataForUserName(username, callback: { (done) -> Void in
+                        if done {
+                            self.tableView.reloadData()
+                            didAddNewPatient = false
+                        }
+                    })
+                }
+            }
+        }
     
     @IBAction func logOutClicked(sender: UIBarButtonItem) {
         self.dismissViewControllerAnimated(true, completion: nil)
@@ -61,6 +70,13 @@ class PatientListViewController: UIViewController,UITableViewDelegate,UITableVie
         let cell = tableView.dequeueReusableCellWithIdentifier("patientName", forIndexPath: indexPath) as UITableViewCell
         cell.textLabel?.text = currentUser?.patientDetails[indexPath.row].name
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        shouldDisplayPatientInfo = true
+        selectedPatient = currentUser?.patientDetails[indexPath.row]
+        self.performSegueWithIdentifier("showsPatientDetails", sender: nil)
     }
     
     

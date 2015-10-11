@@ -1418,7 +1418,7 @@ class PatientInformationViewController: UITableViewController,UITextFieldDelegat
     
     @IBAction func doneButtonClicked(sender: UIBarButtonItem) {
         save()
-        self.dismissViewControllerAnimated(true, completion: nil)
+       navigationController?.popViewControllerAnimated(true)
     }
     
     //MARK: Drawview delegate method
@@ -1441,6 +1441,10 @@ class PatientInformationViewController: UITableViewController,UITextFieldDelegat
     }
     
     override func scrollViewDidScroll(scrollView: UIScrollView) {
+        //self.view.endEditing(true)
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         self.view.endEditing(true)
     }
     
